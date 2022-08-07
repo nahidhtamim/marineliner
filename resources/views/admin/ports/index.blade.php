@@ -1,19 +1,19 @@
 @extends('layouts.admin')
 @section('title')
-Dashboard | A Premium Media Company
+Ports | A Logistics Company
 @endsection
 @section('admin-contents')
 
 @if (session('status'))
-<div class="alert alert-success" role="alert">
-    {{ session('status') }}
-    <a class="close">&times;</a>
-</div>
+   <div class="alert alert-success" role="alert">
+        {{ session('status') }}
+        <a href="" class="close pull-right">&times;</a>
+   </div>
 @elseif (session('warning'))
-<div class="alert alert-danger" role="alert">
-    {{ session('warning') }}
-    <a class="close">&times;</a>
-</div>
+   <div class="alert alert-danger" role="alert">
+        {{ session('warning') }}
+        <a href="" class="close pull-right">&times;</a>
+   </div>    
 @endif
 
 
@@ -21,133 +21,126 @@ Dashboard | A Premium Media Company
 <div class="container-fluid">
 
     <!-- Page Heading -->
-    <h1 class="h3 mb-2 text-gray-800">Print Publications</h1>
+    <h1 class="h3 mb-2 text-gray-800">Ports <a href="{{url('/add-port')}}" class="btn btn-success" data-toggle="modal" data-target="#portModal">Add</a></h1>
 
     <!-- DataTales Example -->
     <div class="card shadow mb-4">
         <div class="card-header py-3">
-            <h6 class="m-0 font-weight-bold text-primary">
-                Print Publications List
-                <button type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModal">
-                    Add
-                </button>
-            </h6>
+            <h6 class="m-0 font-weight-bold text-primary">Ports List</h6>
         </div>
         <div class="card-body">
             <div class="table-responsive">
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                    <thead class="text-center">
+                    <thead>
                         <tr>
-                            <th>SL.</th>
-                            <th>Title</th>
-                            <th>Images</th>
-                            <th>Description Ttop</th>
-                            <th>Description Bottom</th>
-                            <th>Youtube Video</th>
+                            <th>Sl.</th>
+                            <th>Name</th>
+                            <th>Country</th>
                             <th>Slug</th>
-                            <th>Actions</th>
+                            <th>Action</th>
                         </tr>
                     </thead>
                     <tbody>
-                        @php $i=1; @endphp
-                        @forelse ($publications as $publication)
+                        @foreach ($ports as $port)
                             <tr>
-                                <td>{{$i++;}}</td>
-                                <td>{{$publication->title}}</td>
-                                <td></td>
-                                <td>{{$publication->description_top}}</td>
-                                <td>{{$publication->description_bottom}}</td>
-                                <td>{!!$publication->youtube_video!!}</td>
-                                <td>{{$publication->slug}}</td>
+                                <td>{{$port->id}}</td>
+                                <td>{{$port->name}}</td>
+                                <td>{{$port->country_id}}</td>
+                                <td>{{$port->slug}}</td>
                                 <td>
                                     <div class="btn-group">
-                                        <a href="{{url('/edit-publication/{slug}')}}" class="btn btn-primary">Edit</a>
-                                        <a href="{{url('/delete-publication/{slug}')}}" class="btn btn-danger">Delete</a>
+                                        <a href="{{url('/edit-port/'.$port->slug)}}" class="btn btn-primary">Edit</a>
+                                        <a class="btn btn-danger" href="#" data-toggle="modal" data-target="#sureModal">Delete</a>
                                     </div>
+
+                                                                        <!-- Are You Sure Modal-->
+                                    <div class="modal fade" id="sureModal" tabindex="-1" role="dialog" aria-labelledby="sureModalLabel"
+                                    aria-hidden="true">
+                                    <div class="modal-dialog" role="document">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title text-primary" id="sureModalLabel">Ready to delete?</h5>
+                                                <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                                                    <span aria-hidden="true">×</span>
+                                                </button>
+                                            </div>
+                                            <div class="modal-body text-dark">Are you sure, you want to delete the item?</div>
+                                            <div class="modal-footer">
+                                                <a href="{{url('/delete-port/'.$port->slug)}}" class="btn btn-danger">Delete</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                                 </td>
                             </tr>
-                        @empty
-                            <tr>
-                                <td colspan="5" class="text-center">No Publication yet!</td>
-                            </tr>
-                        @endforelse
+                        @endforeach
                     </tbody>
                 </table>
             </div>
         </div>
-        <!-- Modal -->
-        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-            aria-hidden="true">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Add Print Publications</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
-                        <form class="user" action="/add-publication" method="POST" enctype="multipart/form-data">
-                            @csrf
-                            <div class="col-12 mb-3 mb-sm-0">
-                                <label for="title" class="text-primary"> <b>Title <span class="text-danger">*</span></b> </label>
-                                <input type="text" name="title" class="form-control @error('title') is-invalid @enderror" id="title"
-                                    placeholder="Publication Title">
-                                <span class="text-danger">
-                                    @error('title')
-                                        <p class="text-danger">{{$message}}</p> 
-                                    @enderror
-                                </span>
-                                <br>
-                            </div>
-                            <div class="col-12">
-                                <label for="description_top" class="text-primary"> <b>Top Description <span class="text-danger">*</span></b> </label>
-                                <textarea name="description_top" rows="2" id="description_top"
-                                    class="form-control text-left @error('description_top') is-invalid @enderror">
-                                    Top Description
-                                </textarea>
-                                @error('description_top')
+    </div>
+    <!-- Port Add Modal -->
+    <div class="modal fade" id="portModal" tabindex="-1" role="dialog" aria-labelledby="portModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="portModalLabel">Add Port</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form class="user" action="{{url('/save-port')}}" method="POST" enctype="multipart/form-data">
+                        @csrf
+
+                        <div class="col-12 mb-3 mb-sm-0">
+                            <label for="country_id" class="text-primary"> <b>Country <span class="text-danger">*</span></b> </label>
+                            <select name="country_id" id="country_id" required="" class="form-control @error('country_id') is-invalid @enderror">
+                                <option>Select A Country</option>
+                                @foreach($countries as $country)
+                                    <option value="{{$country->id}}">{{$country->name}}</option>
+                                @endforeach
+                            </select>
+                            <span class="text-danger">
+                                @error('country_id')
                                     <p class="text-danger">{{$message}}</p> 
                                 @enderror
-                                <br>
-                            </div>
-                            <div class="col-12">
-                                <label for="description_bottom" class="text-primary"> <b>Bottom Description</b> </label>
-                                <textarea name="description_bottom" rows="2" id="description_bottom"
-                                    class="form-control text-left">
-                                    Bottom Description
-                                </textarea>
-                                <br>
-                            </div>
-                            <div class="col-12 mb-3 mb-sm-0">
-                                <label for="youtube_video" class="text-primary"> <b>Youtube Video</b> </label>
-                                <input type="text" name="youtube_video" class="form-control" id="youtube_video"
-                                    placeholder="Youtube Video">
-                                <br>
-                            </div>
-                            <div class="col-12 mb-3 mb-sm-0">
-                                <label for="slug" class="text-primary"> <b>Slug</b> </label>
-                                <input type="text" name="slug" class="form-control @error('slug') is-invalid @enderror" id="slug"
-                                    placeholder="Slug">
-                                @error('slug')
+                            </span>
+                            <br>
+                        </div>
+
+                        <div class="col-12 mb-3 mb-sm-0">
+                            <label for="name" class="text-primary"> <b>Name <span class="text-danger">*</span></b> </label>
+                            <input type="text" name="name" class="form-control @error('name') is-invalid @enderror" id="name"
+                                placeholder="Port Name" required="">
+                            <span class="text-danger">
+                                @error('name')
                                     <p class="text-danger">{{$message}}</p> 
-                                @enderror    
-                                <br>
-                            </div>
-                            <div class="col-12 mb-3 mb-sm-0">
-                                <label for="images" class="text-primary"> <b>Images</b> <span class="text-danger">*</span> </label>
-                                <input type="file" name="images[]" class="form-control" id="images" accept="image/*" multiple>
-                                <br>
-                            </div>
-                            <div class="col-12 mb-3 mb-sm-0">
-                                <button type="submit" class="btn btn-primary">Save</button>
-                            </div>
-                        </form>
-                    </div>
+                                @enderror
+                            </span>
+                            <br>
+                        </div>
+
+                        <div class="col-12 mb-3 mb-sm-0">
+                            <label for="slug" class="text-primary"> <b>Slug <span class="text-danger">*</span></b> </label>
+                            <input type="text" name="slug" class="form-control @error('slug') is-invalid @enderror" id="slug"
+                                placeholder="Slug" required="">
+                            @error('slug')
+                                <p class="text-danger">{{$message}}</p> 
+                            @enderror    
+                            <br>
+                        </div>
+                        <div class="col-12 mb-3 mb-sm-0">
+                            <button type="submit" class="btn btn-primary">Save</button>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
     </div>
+
+
+
 </div>
 <!-- /.container-fluid -->
 

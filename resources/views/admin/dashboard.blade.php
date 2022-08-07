@@ -1,6 +1,6 @@
 @extends('layouts.admin')
 @section('title')
-Dashboard | A Premium Media Company
+Dashboard | A Logistics Company
 @endsection
 @section('admin-contents')
 
