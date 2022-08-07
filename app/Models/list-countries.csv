@@ -1,0 +1,245 @@
+﻿id,name,slug
+1,Afghanistan,afghanistan
+2,Aland Islands (Finland),aland_islands_(finland)
+3,Albania,albania
+4,Algeria,algeria
+5,American Samoa (USA),american_samoa_(usa)
+6,Andorra,andorra
+7,Angola,angola
+8,Anguilla (UK),anguilla_(uk)
+9,Antigua and Barbuda,antigua_and_barbuda
+10,Argentina,argentina
+11,Armenia,armenia
+12,Aruba (Netherlands),aruba_(netherlands)
+13,Australia,australia
+14,Austria,austria
+15,Azerbaijan,azerbaijan
+16,Bahamas,bahamas
+17,Bahrain,bahrain
+18,Bangladesh,bangladesh
+19,Barbados,barbados
+20,Belarus,belarus
+21,Belgium,belgium
+22,Belize,belize
+23,Benin,benin
+24,Bermuda (UK),bermuda_(uk)
+25,Bhutan,bhutan
+26,Bolivia,bolivia
+27,Bosnia and Herzegovina,bosnia_and_herzegovina
+28,Botswana,botswana
+29,Brazil,brazil
+30,British Virgin Islands (UK),british_virgin_islands_(uk)
+31,Brunei,brunei
+32,Bulgaria,bulgaria
+33,Burkina Faso,burkina_faso
+34,Burma,burma
+35,Burundi,burundi
+36,Cambodia,cambodia
+37,Cameroon,cameroon
+38,Canada,canada
+39,Cape Verde,cape_verde
+40,Caribbean Netherlands (Netherlands),caribbean_netherlands_(netherlands)
+41,Cayman Islands (UK),cayman_islands_(uk)
+42,Central African Republic,central_african_republic
+43,Chad,chad
+44,Chile,chile
+45,China,china
+46,Christmas Island (Australia),christmas_island_(australia)
+47,Cocos (Keeling) Islands (Australia),cocos_(keeling)_islands_(australia)
+48,Colombia,colombia
+49,Comoros,comoros
+50,Cook Islands (NZ),cook_islands_(nz)
+51,Costa Rica,costa_rica
+52,Croatia,croatia
+53,Cuba,cuba
+54,Curacao (Netherlands),curacao_(netherlands)
+55,Cyprus,cyprus
+56,Czech Republic,czech_republic
+57,Democratic Republic of the Congo,democratic_republic_of_the_congo
+58,Denmark,denmark
+59,Djibouti,djibouti
+60,Dominica,dominica
+61,Dominican Republic,dominican_republic
+62,Ecuador,ecuador
+63,Egypt,egypt
+64,El Salvador,el_salvador
+65,Equatorial Guinea,equatorial_guinea
+66,Eritrea,eritrea
+67,Estonia,estonia
+68,Ethiopia,ethiopia
+69,Falkland Islands (UK),falkland_islands_(uk)
+70,Faroe Islands (Denmark),faroe_islands_(denmark)
+71,Federated States of Micronesia,federated_states_of_micronesia
+72,Fiji,fiji
+73,Finland,finland
+74,France,france
+75,French Guiana (France),french_guiana_(france)
+76,French Polynesia (France),french_polynesia_(france)
+77,Gabon,gabon
+78,Gambia,gambia
+79,Georgia,georgia
+80,Germany,germany
+81,Ghana,ghana
+82,Gibraltar (UK),gibraltar_(uk)
+83,Greece,greece
+84,Greenland (Denmark),greenland_(denmark)
+85,Grenada,grenada
+86,Guadeloupe (France),guadeloupe_(france)
+87,Guam (USA),guam_(usa)
+88,Guatemala,guatemala
+89,Guernsey (UK),guernsey_(uk)
+90,Guinea,guinea
+91,Guinea-Bissau,guinea-bissau
+92,Guyana,guyana
+93,Haiti,haiti
+94,Honduras,honduras
+95,Hong Kong (China),hong_kong_(china)
+96,Hungary,hungary
+97,Iceland,iceland
+98,India,india
+99,Indonesia,indonesia
+100,Iran,iran
+101,Iraq,iraq
+102,Ireland,ireland
+103,Isle of Man (UK),isle_of_man_(uk)
+104,Israel,israel
+105,Italy,italy
+106,Ivory Coast,ivory_coast
+107,Jamaica,jamaica
+108,Japan,japan
+109,Jersey (UK),jersey_(uk)
+110,Jordan,jordan
+111,Kazakhstan,kazakhstan
+112,Kenya,kenya
+113,Kiribati,kiribati
+114,Kosovo,kosovo
+115,Kuwait,kuwait
+116,Kyrgyzstan,kyrgyzstan
+117,Laos,laos
+118,Latvia,latvia
+119,Lebanon,lebanon
+120,Lesotho,lesotho
+121,Liberia,liberia
+122,Libya,libya
+123,Liechtenstein,liechtenstein
+124,Lithuania,lithuania
+125,Luxembourg,luxembourg
+126,Macau (China),macau_(china)
+127,Macedonia,macedonia
+128,Madagascar,madagascar
+129,Malawi,malawi
+130,Malaysia,malaysia
+131,Maldives,maldives
+132,Mali,mali
+133,Malta,malta
+134,Marshall Islands,marshall_islands
+135,Martinique (France),martinique_(france)
+136,Mauritania,mauritania
+137,Mauritius,mauritius
+138,Mayotte (France),mayotte_(france)
+139,Mexico,mexico
+140,Moldov,moldov
+141,Monaco,monaco
+142,Mongolia,mongolia
+143,Montenegro,montenegro
+144,Montserrat (UK),montserrat_(uk)
+145,Morocco,morocco
+146,Mozambique,mozambique
+147,Namibia,namibia
+148,Nauru,nauru
+149,Nepal,nepal
+150,Netherlands,netherlands
+151,New Caledonia (France),new_caledonia_(france)
+152,New Zealand,new_zealand
+153,Nicaragua,nicaragua
+154,Niger,niger
+155,Nigeria,nigeria
+156,Niue (NZ),niue_(nz)
+157,Norfolk Island (Australia),norfolk_island_(australia)
+158,North Korea,north_korea
+159,Northern Mariana Islands (USA),northern_mariana_islands_(usa)
+160,Norway,norway
+161,Oman,oman
+162,Pakistan,pakistan
+163,Palau,palau
+164,Palestine,palestine
+165,Panama,panama
+166,Papua New Guinea,papua_new_guinea
+167,Paraguay,paraguay
+168,Peru,peru
+169,Philippines,philippines
+170,Pitcairn Islands (UK),pitcairn_islands_(uk)
+171,Poland,poland
+172,Portugal,portugal
+173,Puerto Rico,puerto_rico
+174,Qatar,qatar
+175,Republic of the Congo,republic_of_the_congo
+176,Reunion (France),reunion_(france)
+177,Romania,romania
+178,Russia,russia
+179,Rwanda,rwanda
+180,Saint Barthelemy (France),saint_barthelemy_(france)
+181,"Saint Helena, Ascension and Tristan da Cunha (UK)",saint_helena_ascension_and_tristan_da_cunha_(uk)
+182,Saint Kitts and Nevis,saint_kitts_and_nevis
+183,Saint Lucia,saint_lucia
+184,Saint Martin (France),saint_martin_(france)
+185,Saint Pierre and Miquelon (France),saint_pierre_and_miquelon_(france)
+186,Saint Vincent and the Grenadines,saint_vincent_and_the_grenadines
+187,Samoa,samoa
+188,San Marino,san_marino
+189,Sao Tom and Principe,sao_tom_and_principe
+190,Saudi Arabia,saudi_arabia
+191,Senegal,senegal
+192,Serbia,serbia
+193,Seychelles,seychelles
+194,Sierra Leone,sierra_leone
+195,Singapore,singapore
+196,Sint Maarten (Netherlands),sint_maarten_(netherlands)
+197,Slovakia,slovakia
+198,Slovenia,slovenia
+199,Solomon Islands,solomon_islands
+200,Somalia,somalia
+201,South Africa,south_africa
+202,South Korea,south_korea
+203,South Sudan,south_sudan
+204,Spain,spain
+205,Sri Lanka,sri_lanka
+206,Sudan,sudan
+207,Suriname,suriname
+208,Svalbard and Jan Mayen (Norway),svalbard_and_jan_mayen_(norway)
+209,Swaziland,swaziland
+210,Sweden,sweden
+211,Switzerland,switzerland
+212,Syria,syria
+213,Taiwan,taiwan
+214,Tajikistan,tajikistan
+215,Tanzania,tanzania
+216,Thailand,thailand
+217,Timor-Leste,timor-leste
+218,Togo,togo
+219,Tokelau (NZ),tokelau_(nz)
+220,Tonga,tonga
+221,Trinidad and Tobago,trinidad_and_tobago
+222,Tunisia,tunisia
+223,Turkey,turkey
+224,Turkmenistan,turkmenistan
+225,Turks and Caicos Islands (UK),turks_and_caicos_islands_(uk)
+226,Tuvalu,tuvalu
+227,Uganda,uganda
+228,Ukraine,ukraine
+229,United Arab Emirates,united_arab_emirates
+230,United Kingdom,united_kingdom
+231,United States,united_states
+232,United States Virgin Islands (USA),united_states_virgin_islands_(usa)
+233,Uruguay,uruguay
+234,Uzbekistan,uzbekistan
+235,Vanuatu,vanuatu
+236,Vatican City,vatican_city
+237,Venezuela,venezuela
+238,Vietnam,vietnam
+239,Wallis and Futuna (France),wallis_and_futuna_(france)
+240,Western Sahara,western_sahara
+241,Yemen,yemen
+242,Zambia,zambia
+243,Zimbabwe,zimbabwe
+244,Other,other

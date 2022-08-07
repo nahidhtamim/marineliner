@@ -1,6 +1,23 @@
 @extends('layouts.app')
 
 @section('content')
+
+@if (session('status'))
+    <div class="flex justify-between text-green-200 shadow-inner rounded p-3 bg-green-600">
+        <p class="self-center">
+        <strong>{{ session('status') }}</strong>
+        </p>
+        <strong class="text-xl align-center cursor-pointer alert-del">&times;</strong>
+    </div>
+@elseif (session('warning'))
+    <div class="flex justify-between text-red-200 shadow-inner rounded p-3 bg-green-600">
+        <p class="self-center">
+        <strong>{{ session('warning') }}</strong>
+        </p>
+        <strong class="text-xl align-center cursor-pointer alert-del">&times;</strong>
+    </div>   
+@endif
+
 <!-- Hero section start -->
 <section class="bg-center bg-cover bg-no-repeat" style="
           background-image: linear-gradient(#2440e222, #17151703),

@@ -29,5 +29,15 @@
     </main>
 
     <script src="https://unpkg.com/flowbite@1.5.1/dist/flowbite.js"></script>
+    <script>
+       // Script For Close alert
+
+      var alert_del = document.querySelectorAll('.alert-del');
+      alert_del.forEach((x) =>
+        x.addEventListener('click', function () {
+          x.parentElement.classList.add('hidden');
+        })
+      );
+    </script>
 </body>
 </html>

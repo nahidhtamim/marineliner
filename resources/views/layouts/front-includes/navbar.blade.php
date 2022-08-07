@@ -1,79 +1,5 @@
 <!-- navigation start -->
 <header>
-    {{-- @if (Route::has('login'))
-            <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
-                @auth
-                    <a href="{{ url('/home') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Home</a>
-    @else
-    <a href="{{ route('login') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Log in</a>
-
-    @if (Route::has('register'))
-    <a href="{{ route('register') }}" class="ml-4 text-sm text-gray-700 dark:text-gray-500 underline">Register</a>
-    @endif
-    @endauth
-    </div>
-    @endif
-
-    <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
-        <div class="container">
-            <a class="navbar-brand" href="{{ url('/') }}">
-                {{ config('app.name', 'Laravel') }}
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-                aria-label="{{ __('Toggle navigation') }}">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <!-- Left Side Of Navbar -->
-                <ul class="navbar-nav me-auto">
-
-                </ul>
-
-                <!-- Right Side Of Navbar -->
-                <ul class="navbar-nav ms-auto">
-                    <!-- Authentication Links -->
-                    @guest
-                    @if (Route::has('login'))
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
-                    </li>
-                    @endif
-
-                    @if (Route::has('register'))
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
-                    </li>
-                    @endif
-                    @else
-                    <li class="nav-item dropdown">
-                        <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
-                            data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                            {{ Auth::user()->name }}
-                        </a>
-
-                        <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
-                                                 document.getElementById('logout-form').submit();">
-                                {{ __('Logout') }}
-                            </a>
-
-                            <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                                @csrf
-                            </form>
-                        </div>
-                    </li>
-                    @endguest
-                </ul>
-            </div>
-        </div>
-    </nav>
-
-    --}}
-
-    
-
     <nav class="bg-slate-100 border-gray-200 px-4 lg:px-6 py-3 shadow-lg z-10 fixed w-full">
         <div class="flex flex-wrap justify-between items-center mx-auto">
             <a href="{{url('/')}}" class="flex items-center">
@@ -91,15 +17,45 @@
                 @endif
                 @else
 
-                <a href="{{url('/profile')}}" class="btn-secondary mr-2 hidden md:block">{{ Auth::user()->name }}</a>
-
-                <a href="{{ route('logout') }}" class="btn-primary hidden md:block" onclick="event.preventDefault();
-                document.getElementById('logout-form').submit();">
-                  Logout
-                </a>
-                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                  @csrf
-                </form>
+                <div class="flex items-center lg:order-2">
+                    <!-- TAMIM Dropdown start here -->
+                    <button id="dropdownAvatarNameButton" data-dropdown-toggle="dropdownAvatarName" class="items-center text-sm font-medium btn-primary hidden md:flex" type="button">
+                      <span class="sr-only">Open user menu</span>
+                      <img class="mr-2 w-6 h-6 rounded-full" src="{{asset('frontend/assets/images/Avatar_poe84it.png')}}" alt="user photo">
+                      Bonnie Green
+                      <svg class="w-4 h-4 mx-1.5" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+                      </svg>
+                    </button>
+        
+                    <!-- Dropdown menu -->
+                    <div id="dropdownAvatarName" class="z-10 w-44 bg-white rounded divide-y divide-gray-100 shadow hidden" data-popper-placement="bottom" style="position: absolute; inset: 0px auto auto 0px; margin: 0px; transform: translate(0px, 10px);" data-popper-reference-hidden="" data-popper-escaped="">
+                      <div class="py-3 px-4 text-sm hover:bg-slate-100">
+                        <a href="#">
+                          <div class="font-medium">Admin</div>
+                          <div class="truncate">{{Auth::user()->name}}</div>
+                        </a>
+                      </div>
+                      <ul class="py-1 text-sm text-gray-700" aria-labelledby="dropdownInformdropdownAvatarNameButtonationButton">
+                        <li>
+                          <a href="#" class="block py-2 px-4 hover:bg-gray-100">Your Bookings</a>
+                        </li>
+                        <li>
+                          <a href="#" class="block py-2 px-4 hover:bg-gray-100">Tracking</a>
+                        </li>
+                      </ul>
+                      <div class="py-1">
+                        <a href="{{ route('logout') }}" class="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100" onclick="event.preventDefault();
+                        document.getElementById('logout-form').submit();">
+                            Signout
+                        </a>
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                            @csrf
+                        </form>
+                      </div>
+                    </div>
+                    <!-- TAMIM Dropdown end here -->
+                </div>
                 @endguest
 
                 <button data-collapse-toggle="mobile-menu-2" type="button"
@@ -148,21 +104,60 @@
                 <a href="{{url('login')}}" class="btn-secondary mr-2 md:hidden block">Log in</a>
                 @endif
                 @if (Route::has('register'))
-                <a href="{{url('register')}}" class="btn-primary md:hidden block">
+                <a href="{{url('register')}}" class="btn-primary mr-2 md:hidden block">
                     Get started
                 </a>
                 @endif
                 @else
 
-                <a href="{{url('/profile')}}" class="btn-secondary mr-2 hidden md:block">{{ Auth::user()->name }}</a>
+                <div class="flex items-center lg:order-2">
+                    <!-- TAMIM Dropdown start here -->
+                    <button id="dropdownAvatarNameButton" data-dropdown-toggle="dropdownAvatarName" class="items-center text-sm font-medium btn-primary md:hidden flex" type="button">
+                      <span class="sr-only">Open user menu</span>
+                      <img class="mr-2 w-6 h-6 rounded-full" src="{{asset('frontend/assets/images/Avatar_poe84it.png')}}" alt="user photo">
+                      Bonnie Green
+                      <svg class="w-4 h-4 mx-1.5" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+                      </svg>
+                    </button>
+        
+                    <!-- Dropdown menu -->
+                    <div id="dropdownAvatarName" class="z-10 w-44 bg-white rounded divide-y divide-gray-100 shadow hidden" data-popper-placement="bottom" style="position: absolute; inset: 0px auto auto 0px; margin: 0px; transform: translate(0px, 10px);" data-popper-reference-hidden="" data-popper-escaped="">
+                      <div class="py-3 px-4 text-sm hover:bg-slate-100">
+                        <a href="#">
+                          <div class="font-medium">Admin</div>
+                          <div class="truncate">{{Auth::user()->name}}</div>
+                        </a>
+                      </div>
+                      <ul class="py-1 text-sm text-gray-700" aria-labelledby="dropdownInformdropdownAvatarNameButtonationButton">
+                        <li>
+                          <a href="#" class="block py-2 px-4 hover:bg-gray-100">Your Bookings</a>
+                        </li>
+                        <li>
+                          <a href="#" class="block py-2 px-4 hover:bg-gray-100">Tracking</a>
+                        </li>
+                      </ul>
+                      <div class="py-1">
+                        <a href="{{ route('logout') }}" class="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100" onclick="event.preventDefault();
+                        document.getElementById('logout-form').submit();">
+                            Signout
+                        </a>
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                            @csrf
+                        </form>
+                      </div>
+                    </div>
+                    <!-- TAMIM Dropdown end here -->
+                </div>
+                {{-- <a href="{{url('/profile')}}" class="btn-secondary mr-2 md:hidden block">{{ Auth::user()->name }}</a>
 
-                <a href="{{ route('logout') }}" class="btn-primary hidden md:block" onclick="event.preventDefault();
+                <a href="{{ route('logout') }}" class="btn-primary md:hidden block" onclick="event.preventDefault();
                 document.getElementById('logout-form').submit();">
                   Logout
                 </a>
                 <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                   @csrf
-                </form>
+                </form> --}}
                 @endguest
 
             </div>
