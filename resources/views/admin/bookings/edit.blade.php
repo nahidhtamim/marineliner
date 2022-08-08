@@ -1,6 +1,6 @@
 @extends('layouts.admin')
 @section('title')
-Ports | A Premium Media Company
+Edit Country | A Logistics Company
 @endsection
 @section('admin-contents')
 
@@ -21,37 +21,20 @@ Ports | A Premium Media Company
 <div class="container-fluid">
 
     <!-- Page Heading -->
-    <h1 class="h3 mb-2 text-gray-800">Ports</h1>
+    <h1 class="h3 mb-2 text-gray-800">Countries</h1>
 
     <!-- DataTales Example -->
     <div class="card shadow mb-4">
         <div class="card-header py-3">
-            <h6 class="m-0 font-weight-bold text-primary">Ports List</h6>
+            <h6 class="m-0 font-weight-bold text-primary">Countries List</h6>
         </div>
         <div class="card-body">
-            <form class="user" action="{{url('/update-port/'.$port->slug)}}" method="POST" enctype="multipart/form-data">
+            <form class="user" action="{{url('/update-country/'.$country->slug)}}" method="POST" enctype="multipart/form-data">
                 @csrf
-
-                <div class="col-12 mb-3 mb-sm-0">
-                    <label for="country_id" class="text-primary"> <b>Country <span class="text-danger">*</span></b> </label>
-                    <select name="country_id" id="country_id" required="" class="form-control @error('country_id') is-invalid @enderror">
-                        <option value="{{$port->country_id}}">{{$port->country_info->name}}</option>
-                        @foreach($countries as $country)
-                            <option value="{{$country->id}}">{{$country->name}}</option>
-                        @endforeach
-                    </select>
-                    <span class="text-danger">
-                        @error('country_id')
-                            <p class="text-danger">{{$message}}</p> 
-                        @enderror
-                    </span>
-                    <br>
-                </div>
-
                 <div class="col-12 mb-3 mb-sm-0">
                     <label for="name" class="text-primary"> <b>Name <span class="text-danger">*</span></b> </label>
                     <input type="text" name="name" class="form-control @error('name') is-invalid @enderror" id="name"
-                        value="{{$port->name}}" required="">
+                        value="{{$country->name}}" required="">
                     <span class="text-danger">
                         @error('name')
                             <p class="text-danger">{{$message}}</p> 
@@ -62,7 +45,7 @@ Ports | A Premium Media Company
                 <div class="col-12 mb-3 mb-sm-0">
                     <label for="slug" class="text-primary"> <b>Slug <span class="text-danger">*</span></b> </label>
                     <input type="text" name="slug" class="form-control @error('slug') is-invalid @enderror" id="slug"
-                        value="{{$port->slug}}" required="">
+                        value="{{$country->slug}}" required="">
                     @error('slug')
                         <p class="text-danger">{{$message}}</p> 
                     @enderror    

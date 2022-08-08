@@ -35,7 +35,7 @@ Route::group(['middleware' => ['auth','isAdmin','verified']], function () {
 
     Route::get('/dashboard', [DashboardController::class, 'index']);
  
-    // Countrys Routes
+    // Countries Routes
     Route::get('/countries', [CountryController::class, 'index']);
     Route::post('/save-country', [CountryController::class, 'saveCountry']);
     Route::get('/edit-country/{slug}', [CountryController::class, 'editCountry']);
@@ -50,6 +50,20 @@ Route::group(['middleware' => ['auth','isAdmin','verified']], function () {
     Route::get('/edit-port/{slug}', [PortController::class, 'editPort']);
     Route::post('/update-port/{slug}', [PortController::class, 'updatePort']);
     Route::get('/delete-port/{slug}', [PortController::class, 'deletePort']);
+
+    // Containers Routes
+    Route::get('/containers', [ContainerController::class, 'index']);
+    Route::post('/save-container', [ContainerController::class, 'saveContainer']);
+    Route::get('/edit-container/{slug}', [ContainerController::class, 'editContainer']);
+    Route::post('/update-container/{slug}', [ContainerController::class, 'updateContainer']);
+    Route::get('/delete-container/{slug}', [ContainerController::class, 'deleteContainer']);
+
+    // Containers Routes
+    Route::get('/bookings', [BookingController::class, 'index']);
+    Route::post('/save-booking', [BookingController::class, 'saveBooking']);
+    Route::get('/edit-booking/{slug}', [BookingController::class, 'editBooking']);
+    Route::post('/update-booking/{slug}', [BookingController::class, 'updateBooking']);
+    Route::get('/delete-booking/{slug}', [BookingController::class, 'deleteBooking']);
 
     // Route::get('/services', [CountryController::class, 'index']);
     // Route::get('/add-service', [CountryController::class, 'addService']);

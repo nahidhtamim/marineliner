@@ -16,4 +16,10 @@ class Port extends Model
         'country_id',
         'slug',
     ];
+
+
+    public function country_info()
+    {
+        return $this->belongsTo(Country::class,'country_id','id');
+    }
 }
