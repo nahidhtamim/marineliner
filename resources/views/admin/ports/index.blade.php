@@ -45,7 +45,7 @@ Ports | A Logistics Company
                             <tr>
                                 <td>{{$port->id}}</td>
                                 <td>{{$port->name}}</td>
-                                <td>{{$port->country_id}}</td>
+                                <td>{{$port->country_info->name}}</td>
                                 <td>{{$port->slug}}</td>
                                 <td>
                                     <div class="btn-group">

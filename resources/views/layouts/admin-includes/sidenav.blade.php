@@ -28,7 +28,13 @@
                     <i class="fas fa-fw fa-map-marker-alt"></i>
                     <span>Ports</span></a>
             </li>
-            <!-- Nav Item - Tables -->
+            <!-- Nav Item - Containers -->
+            <li class="nav-item">
+                <a class="nav-link" href="{{url('/containers')}}">
+                    <i class="fas fa-fw fa-box"></i>
+                    <span>Containers</span></a>
+            </li>
+            <!-- Nav Item - Bookings -->
             <li class="nav-item">
                 <a class="nav-link" href="{{url('/bookings')}}">
                     <i class="fas fa-fw fa-table"></i>
